@@ -1,6 +1,6 @@
 ## Backend configuration
 
-To configure the backend, specify the following environment variables in an `.env` file located in `library\pkg\backend\.env`:
+To configure the backend, specify the following environment variables in an `.env` file located in `library\pkg\backend\.env`:  
 `PORT`  
 `PROD_DATABASE_URL`  
 `TEST_DATABASE_URL`  
