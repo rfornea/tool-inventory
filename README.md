@@ -11,7 +11,7 @@ While in `library\pkg\backend`, you can run `go run main.go` to serve up the bac
 
 ## Frontend configuration  
 
-In `library\pkg\http\web\app`, create an `.env` file and put this environment variable in it.  
+In `library\pkg\http\web\app`, create an `.env` file and put this environment variable in it:  
 `VUE_APP_HOST`  
 
 This should point to the backend you are serving up.  The value will most likely be something like:
