@@ -4,6 +4,9 @@
       <nav>
         <router-link class="books-nav" to="/books">Manage Books</router-link>
         <router-link class="books-nav" to="/new-book">Add New Book</router-link>
+        <router-link class="books-nav" to="/books-status"
+          >Book Status List</router-link
+        >
       </nav>
     </div>
   </fixed-header>
