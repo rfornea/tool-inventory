@@ -134,7 +134,7 @@ export default {
     };
   },
   created() {
-    if (this.tool === undefined || this.tool === null) {
+    if (this.tool.name === undefined || this.tool.name === null) {
       this.$router.push({ name: "view-tools", location: "tools" });
     }
     this.tool.file = {};
