@@ -73,9 +73,13 @@ export default {
     if (this.tool === undefined || this.tool === null) {
       this.$router.push({ name: "view-tools", location: "tools" });
     }
-    APIClient.getImageUrl(this.tool.id).then(res => {
-      this.imageUrl = res;
-    });
+    APIClient.getImageUrl(this.tool.id)
+      .then(res => {
+        this.imageUrl = res;
+      })
+      .catch(res => {
+        this.imageUrl = res;
+      });
   },
   methods: {
     ...mapActions(["removeTool"]),

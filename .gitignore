@@ -10,3 +10,4 @@ pkg/backend/.env
 bin
 .env
 .idea
+data

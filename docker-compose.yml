@@ -1,56 +1,25 @@
 version: "3"
 
 services:
-  backend:
-    build: "."
+  db:
+    container_name: mysql
+    image: mysql:5.7
     restart: "always"
+    command: --sql_mode=''
+    # command: mysqld --sql_mode=''
+    environment:
+      - MYSQL_DATABASE=prod
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=secret
     ports:
-    - ${APP_PORT:-3000}:3000
-    env_file:
-      - ".env"
-#    depends_on:
-#    - "db"
+      - "33060:3306"
     volumes:
-    - ".:/go/src/github.com/rfornea/tool-inventory/pkg/backend"
-    working_dir: "/go/src/github.com/rfornea/tool-inventory/pkg/backend"
-#    command: >
-#      bash -c "
-#        echo waiting for db...;
-#        while ! nc -z db 3306;
-#        do
-#          sleep 0.5;
-#          free -m;
-#        done;
-#        echo ${DEBUG}
-#        echo \"Starting server\";
-#        go build -o ./bin/tool-inventory && chmod +x ./bin/tool-inventory;
-#        ./bin/tool-inventory;
-#      "
-    command: >
-      bash -c "
-        echo \"Starting server\";
-        go build -o ./bin/tool-inventory && chmod +x ./bin/tool-inventory;
-        ./bin/tool-inventory;
-      "
-#    networks:
-#      - dbnet
+      - "./data/db/mysql:/var/lib/mysql"
+      - "./db:/docker-entrypoint-initdb.d/"
+    networks:
+      - dbnet
 
-#  db:
-#    container_name: my_postgres
-#    image: postgres
-#    restart: "always"
-#    environment:
-#      - POSTGRES_USER=admin
-#      - POSTGRES_PASSWORD=admin
-#      - POSTGRES_DB=db
-#    ports:
-#      - "33060:3306"
-#    networks:
-#      - dbnet
-#    volumes:
-#      - ./postgres-data:/var/lib/postgresql/data
-
-#networks:
-#  dbnet:
-#    driver: bridge
+networks:
+  dbnet:
+    driver: bridge
 
