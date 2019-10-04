@@ -1,0 +1,118 @@
+.tool-model {
+    clear: left;
+    display: block;
+}
+.tool-manufacturer {
+    clear: left;
+    display: block;
+}
+.tool-name {
+    float: left;
+    width: 100% !important;
+    display: inline-block;
+}
+.tool-description {
+    border: 1px solid #cac6c6;
+    padding: 3px;
+    max-height: 200px;
+    width: 60%;
+    float: right;
+    overflow: auto;
+}
+.tool-image {
+    max-height: 150px;
+    max-width: 150px;
+    margin-right: auto;
+    margin-left:auto;
+    margin-bottom:10px;
+}
+/*this class needed for error styles, do not delete*/
+.input-error {
+    border: 1px solid red;
+}
+.tool-description-input {
+    height: 100px;
+}
+.dropbox {
+    outline: 2px dashed grey; /* the dash box */
+    outline-offset: -10px;
+    background: lightcyan;
+    color: dimgray;
+    padding: 10px 10px;
+    min-height: 100px !important; /* minimum height */
+    max-height: 100px !important; /* minimum height */
+    position: relative;
+    cursor: pointer;
+}
+.dropbox:hover {
+    background: lightblue; /* when mouse over to the drop zone, change color */
+}
+.dropbox p {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 25px 0;
+}
+.input-file {
+    opacity: 0; /* invisible but it's there! */
+    width: 100%;
+    height: 100px !important;
+    position: absolute;
+    cursor: pointer;
+}
+.file-error {
+    border: 2px dashed red !important;
+}
+.tools-nav {
+    color: white !important;
+    margin-right: 25px;
+}
+.header-bg {
+    background-color: #3d5496 !important;
+}
+.tool-delete-btn {
+    float: right;
+}
+.tool-details-btn {
+    float: right;
+    margin-right: 5px;
+}
+.tool-clear-btn {
+    float: right;
+}
+.tool-update-btn {
+    clear: left;
+    float: right !important;
+    margin-right: 5px;
+}
+.tool-separator {
+    clear: both;
+    border-bottom: 3px solid #3d5496;
+}
+.clear-all {
+    clear: right;
+    float: right;
+}
+.half-width-right {
+    float: right;
+    width:50%;
+}
+.half-width-left {
+    float: left;
+    width:50%;
+}
+label {
+    margin-left: 5px;
+    font-size: 1.25em;
+}
+textarea {
+    border: 1px solid #cac6c6;
+    padding: 1px;
+    margin: 0 0 5px 5px;
+    width: 100%;
+}
+input {
+    border: 1px solid #cac6c6;
+    padding: 1px;
+    margin: 0 0 5px 5px;
+    width: 100%;
+}

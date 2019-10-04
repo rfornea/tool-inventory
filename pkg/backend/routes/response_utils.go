@@ -3,7 +3,7 @@ package routes
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/rfornea/library/pkg/backend/utils"
+	"github.com/rfornea/tool-inventory/pkg/backend/utils"
 	"net/http"
 )
 

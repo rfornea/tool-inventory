@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/rfornea/library/pkg/backend/models"
-	"github.com/rfornea/library/pkg/backend/routes"
-	"github.com/rfornea/library/pkg/backend/utils"
+	"github.com/rfornea/tool-inventory/pkg/backend/models"
+	"github.com/rfornea/tool-inventory/pkg/backend/routes"
+	"github.com/rfornea/tool-inventory/pkg/backend/utils"
 )
 
 func main() {

@@ -1,0 +1,10 @@
+.idea
+pkg/frontend/node_modules
+pkg/frontend/.idea
+
+pkg/backend/assets/images
+.env
+pkg/frontend/.env
+pkg/frontend/package-lock.json
+pkg/frontend/yarn.lock
+pkg/backend/.env

@@ -2,7 +2,7 @@ package models
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/rfornea/library/pkg/backend/utils"
+	"github.com/rfornea/tool-inventory/pkg/backend/utils"
 	"testing"
 )
 
@@ -11,49 +11,47 @@ const testDatabaseErrorString = "should only be calling this method on test data
 func setupTests(t *testing.T) {
 	utils.SetTesting("../.env")
 	Connect(utils.Env.TestDatabaseURL)
-	DeleteTripsForTest(t)
+	DeleteToolsForTest(t)
 	gin.SetMode(gin.TestMode)
 }
 
-func ReturnValidBookDataForTest(t *testing.T) []BookData {
+func ReturnValidToolDataForTest(t *testing.T) []ToolData {
 	utils.AbortIfNotTesting(t)
-	return []BookData{
+	return []ToolData{
 		{
-			Title:           "Anna Karenina",
-			AuthorFirstName: "Leo",
-			AuthorLastName:  "Tolstoy",
-			Isbn:            "0-8659-3759-1",
-			Description:     "Anna Karenina tells of the doomed love affair between the sensuous and rebellious Anna and the dashing officer, Count Vronsky. Tragedy unfolds as Anna rejects her passionless marriage and thereby exposes herself to the hypocrisies of society. Set against a vast and richly textured canvas of nineteenth-century Russia, the novel's seven major characters create a dynamic imbalance, playing out the contrasts of city and country life and all the variations on love and family happiness.",
+			Name:         "Hammer",
+			Model:        "00201",
+			Manufacturer: "Black and Decker",
+			Description:  "Use this for nails",
 		},
 		{
-			Title:           "Don Quixote",
-			AuthorFirstName: "Miguel",
-			AuthorLastName:  "de Cervantes",
-			Isbn:            "0-4821-4331-2",
-			Description:     "Don Quixote has become so entranced by reading chivalric romances, that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways.",
+			Name:         "Screwdriver",
+			Model:        "917",
+			Manufacturer: "Ryobi",
+			Description:  "Use this for screws",
 		},
 	}
 }
 
-func MakeBooksForTest(t *testing.T) []Book {
+func MakeToolsForTest(t *testing.T) []Tool {
 	utils.AbortIfNotTesting(t)
 
-	var books []Book
+	var tools []Tool
 
-	bookData := ReturnValidBookDataForTest(t)
+	toolData := ReturnValidToolDataForTest(t)
 
-	for _, val := range bookData {
-		book := Book{
-			BookData: val,
+	for _, val := range toolData {
+		tool := Tool{
+			ToolData: val,
 		}
-		DB.Create(&book)
-		books = append(books, book)
+		DB.Create(&tool)
+		tools = append(tools, tool)
 	}
-	return books
+	return tools
 }
 
-func DeleteTripsForTest(t *testing.T) {
-	deleteForTest(t, "books")
+func DeleteToolsForTest(t *testing.T) {
+	deleteForTest(t, "tools")
 }
 
 func deleteForTest(t *testing.T, table string) {
