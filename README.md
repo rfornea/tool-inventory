@@ -1,3 +1,9 @@
+## Pre-requisites   
+You have the following installed on your machine:  
+* go  
+* yarn (or you can probably just use npm)  
+* docker-compose  
+
 ## Backend configuration
 
 To configure the backend, specify the following environment variables in an `.env` file located in `tool-inventory\pkg\backend\.env`:  
