@@ -11,6 +11,11 @@
                 >
               </v-toolbar>
               <v-card-text>
+                <span v-if="tools.length === 0">
+                  You don't have any tools in your inventory yet.
+                  <router-link to="/new-tool">Click here</router-link>
+                  to add some.
+                </span>
                 <span v-for="tool in tools" v-bind:key="tool.id">
                   <h6 class="tool-name">
                     {{ tool.name }}
